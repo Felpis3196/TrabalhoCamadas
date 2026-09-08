@@ -97,25 +97,15 @@
           </dl>
         </div>
 
-        <div class="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 480 420" class="ship-illustration" focusable="false">
-            <ellipse cx="240" cy="330" rx="220" ry="18" class="water-shadow" />
-            <path d="M60 240 C120 220 360 220 420 240 L400 300 C320 320 160 320 80 300 Z" class="hull" />
-            <rect x="120" y="150" width="240" height="90" rx="6" class="cabin" />
-            <rect x="150" y="110" width="180" height="45" rx="4" class="cabin-upper" />
-            <rect x="200" y="70" width="30" height="45" class="funnel" />
-            <line x1="70" y1="330" x2="410" y2="330" class="deck-line" />
-            <g class="portholes">
-              <circle cx="150" cy="195" r="8" />
-              <circle cx="185" cy="195" r="8" />
-              <circle cx="220" cy="195" r="8" />
-              <circle cx="255" cy="195" r="8" />
-              <circle cx="290" cy="195" r="8" />
-              <circle cx="325" cy="195" r="8" />
-            </g>
-            <path d="M20 360 Q 60 345 100 360 T 180 360 T 260 360 T 340 360 T 420 360 T 460 360" class="wave wave-1" />
-            <path d="M0 385 Q 60 368 120 385 T 240 385 T 360 385 T 480 385" class="wave wave-2" />
-          </svg>
+        <div class="hero-art">
+          <figure class="hero-photo">
+            <img
+              src="img/navio-hero.jpg"
+              alt="O Navio Homero Krähenbühl navegando pelo Rio Tietê em Barra Bonita"
+              width="480" height="420"
+              loading="eager"
+            />
+          </figure>
         </div>
       </div>
     </section>
@@ -134,35 +124,44 @@
 
         <div class="deck-grid">
           <article class="deck-card">
-            <p class="deck-number">Convés Principal</p>
-            <p class="deck-capacity"><strong>140</strong> lugares</p>
-            <h3>Restaurante, bar e pista de dança</h3>
-            <p>
-              Reúne a cozinha, o Bar Güther, a loja de bordo, o elevador e o
-              restaurante principal, com pista de dança e palco onde fica um
-              piano de cauda fabricado em Chicago em 1932.
-            </p>
+            <img class="deck-photo" src="img/conves-principal.jpg" alt="Restaurante e pista de dança do Convés Principal, com o palco e o piano ao fundo" loading="lazy" />
+            <div class="deck-card-body">
+              <p class="deck-number">Convés Principal</p>
+              <p class="deck-capacity"><strong>140</strong> lugares</p>
+              <h3>Restaurante, bar e pista de dança</h3>
+              <p>
+                Reúne a cozinha, o Bar Güther, a loja de bordo, o elevador e o
+                restaurante principal, com pista de dança e palco onde fica um
+                piano de cauda fabricado em Chicago em 1932.
+              </p>
+            </div>
           </article>
 
           <article class="deck-card">
-            <p class="deck-number">Convés Superior</p>
-            <p class="deck-capacity"><strong>100</strong> lugares no restaurante · <strong>112</strong> no auditório</p>
-            <h3>Restaurante e auditório para eventos</h3>
-            <p>
-              Conta com sanitários masculino, feminino e para pessoas com
-              deficiência, o Bar Babilônia e um restaurante que se transforma
-              em auditório com telão para eventos corporativos.
-            </p>
+            <img class="deck-photo" src="img/conves-superior.jpg" alt="Restaurante do Convés Superior, preparado para funcionar como auditório de eventos" loading="lazy" />
+            <div class="deck-card-body">
+              <p class="deck-number">Convés Superior</p>
+              <p class="deck-capacity"><strong>100</strong> lugares no restaurante · <strong>112</strong> no auditório</p>
+              <h3>Restaurante e auditório para eventos</h3>
+              <p>
+                Conta com sanitários masculino, feminino e para pessoas com
+                deficiência, o Bar Babilônia e um restaurante que se transforma
+                em auditório com telão para eventos corporativos.
+              </p>
+            </div>
           </article>
 
           <article class="deck-card">
-            <p class="deck-number">Convés Flybridge</p>
-            <p class="deck-capacity">até <strong>50</strong> pessoas</p>
-            <h3>Lounge ao ar livre</h3>
-            <p>
-              O convés mais alto do navio, com o Bar Bambu, sofás e poltronas
-              para apreciar a paisagem do rio a céu aberto.
-            </p>
+            <img class="deck-photo" src="img/conves-flybridge.jpg" alt="Lounge ao ar livre do Convés Flybridge, com sofás e vista para o rio" loading="lazy" />
+            <div class="deck-card-body">
+              <p class="deck-number">Convés Flybridge</p>
+              <p class="deck-capacity">até <strong>50</strong> pessoas</p>
+              <h3>Lounge ao ar livre</h3>
+              <p>
+                O convés mais alto do navio, com o Bar Bambu, sofás e poltronas
+                para apreciar a paisagem do rio a céu aberto.
+              </p>
+            </div>
           </article>
         </div>
 
@@ -273,6 +272,10 @@
           de água doce, cachaças e vinhos produzidos no interior do estado.
           Abra cada item abaixo para ver o que compõe o menu a bordo.
         </p>
+
+        <figure class="gastronomia-photo">
+          <img src="img/gastronomia-prato.jpg" alt="Prato de moqueca de filhote com arroz e cuscuz piracicabano, servido a bordo do Navio Homero" loading="lazy" />
+        </figure>
 
         <div class="menu-accordion">
           <details class="menu-item" open>

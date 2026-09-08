@@ -5,9 +5,10 @@ Projeto do **Bootcamp Desenvolvimento de Sistemas Web Avançados — Front-End**
 Site institucional acessível, inspirado no navio de cruzeiro fluvial **NM
 Homero Krähenbühl**, que navega no Rio Tietê e tem porto em Barra Bonita
 (SP). O conteúdo (textos, roteiros e cardápio) foi adaptado do site oficial
-[naviohomero.com.br](https://naviohomero.com.br) exclusivamente para fins
-didáticos deste bootcamp — **não é o site oficial da empresa** e não deve ser
-publicado como tal. Para reservas reais, use sempre o site oficial.
+[naviohomero.com.br](https://naviohomero.com.br) para fins didáticos deste
+bootcamp, com autorização da empresa para uso de fotos oficiais (ver seção
+4). Ainda assim, este é um **projeto de estudo, não o site oficial da
+empresa** — para reservas reais, use sempre o site oficial.
 
 ## 1. Descrição do projeto
 
@@ -40,9 +41,9 @@ O site tem **5 seções principais**, todas em um único nível de navegação
   caracteres para facilitar a leitura.
 - Espaçamento generoso entre blocos, linhas e botões.
 - Ícones sempre acompanhados de rótulo textual (nunca só ícone).
-- Imagens são ilustrações SVG originais com `aria-hidden` (decorativas) —
-  não há fotos externas, evitando problemas de direitos autorais do site
-  original.
+- Ícones da interface são SVG originais (decorativos, `aria-hidden`); as
+  fotos do navio são reais e autorizadas pela empresa, cada uma com `alt`
+  descritivo (ver seção 4 sobre como adicioná-las).
 - Formulário de contato com mensagens de erro específicas por campo,
   `aria-describedby`, `aria-invalid` e uma região `aria-live="polite"` que
   anuncia o carregamento e a confirmação do envio.
@@ -74,7 +75,33 @@ projeto-navio-homero/
 └── .gitignore
 ```
 
-## 4. Instruções para instalação e execução
+## 4. Imagens (fotos oficiais autorizadas)
+
+O HTML já está preparado para exibir fotos reais do navio — falta apenas
+salvar os arquivos autorizados dentro da pasta `img/`, com **exatamente**
+estes nomes (enquanto o arquivo não existe, o navegador mostra o texto do
+`alt` no lugar, então nada quebra):
+
+| Arquivo                        | Onde aparece            | Sugestão de conteúdo                          |
+|---------------------------------|--------------------------|------------------------------------------------|
+| `img/navio-hero.jpg`            | Início (destaque)        | Foto do navio navegando, de longe              |
+| `img/conves-principal.jpg`      | O Navio → Convés Principal | Restaurante / pista de dança / palco          |
+| `img/conves-superior.jpg`       | O Navio → Convés Superior  | Restaurante-auditório                         |
+| `img/conves-flybridge.jpg`      | O Navio → Flybridge        | Lounge do convés mais alto                    |
+| `img/gastronomia-prato.jpg`     | Gastronomia               | Um prato do cardápio já montado                |
+
+Recomendações:
+
+- Use fotos na horizontal (paisagem), com boa resolução, mas comprima antes
+  de subir ao GitHub (ideal: até ~300 KB por imagem, formato `.jpg` ou
+  `.webp`) para o site carregar rápido.
+- Ajuste o texto de `alt` de cada `<img>` no `index.html` caso a foto
+  escolhida mostre algo diferente do que está descrito ali — o `alt` precisa
+  sempre corresponder ao que a imagem realmente mostra.
+- Essas fotos pertencem à empresa do Navio Homero; use apenas material que
+  vocês têm autorização para publicar.
+
+## 5. Instruções para instalação e execução
 
 Este é um projeto **100% estático**, sem dependências ou build:
 
@@ -99,7 +126,7 @@ Este é um projeto **100% estático**, sem dependências ou build:
 Nenhuma variável de ambiente, chave de API ou instalação de pacotes é
 necessária.
 
-## 5. Como testar a acessibilidade
+## 6. Como testar a acessibilidade
 
 Conforme sugerido no guia do bootcamp:
 
@@ -113,7 +140,7 @@ Conforme sugerido no guia do bootcamp:
 - Teste manual de teclado: navegue pela página inteira usando apenas `Tab`,
   `Shift+Tab`, `Enter` e `Esc`.
 
-## 6. Integrantes
+## 7. Integrantes
 
 > Preencha com o nome dos integrantes do grupo (quando aplicável):
 
@@ -121,8 +148,9 @@ Conforme sugerido no guia do bootcamp:
 - [ ] Nome do integrante 2
 - [ ] Nome do integrante 3
 
-## 7. Próximos passos sugeridos
+## 8. Próximos passos sugeridos
 
+- Adicionar as 5 fotos oficiais listadas na seção 4.
 - Rodar o Lighthouse e o axe DevTools e corrigir eventuais apontamentos.
 - Revalidar o contraste de cores com o WebAIM Contrast Checker.
 - Substituir o envio simulado do formulário por uma integração real

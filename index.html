@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navio Homero Krähenbühl — Cruzeiros no Rio Tietê em Barra Bonita</title>
+  <meta name="description" content="Site institucional acessível do Navio Homero Krähenbühl: roteiros, gastronomia e informações sobre os cruzeiros fluviais em Barra Bonita, SP. Projeto de bootcamp com foco em acessibilidade." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Link de pular navegação: primeiro elemento focável da página -->
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <!-- Sprite de ícones SVG reutilizáveis (acessível, escalável, sem imagens externas) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1.7 2 7.3 5.4L19.3 7H4.7ZM20 8.4l-7.4 5.5a1 1 0 0 1-1.2 0L4 8.4V17h16V8.4Z"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 2c-4 0-7.3 3.3-7.3 7.3 0 5.5 6.6 12 6.9 12.3.2.2.6.2.8 0 .3-.3 6.9-6.8 6.9-12.3C19.3 5.3 16 2 12 2Zm0 10a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4Z"/></symbol>
+    <symbol id="icon-anchor" viewBox="0 0 24 24"><path d="M12 2a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm-1 6h2v2.9h5.3a1 1 0 0 1 1 1.1c-.3 3.6-2.6 6.6-6 7.8v-8.8h-2v8.8c-3.4-1.2-5.7-4.2-6-7.8a1 1 0 0 1 1-1.1H11V8Z"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm.5-13H11v6l5.2 3.1.8-1.3-4.5-2.7V7Z"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="M6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12 19 6.4 17.6 5 12 10.6 6.4 5Z"/></symbol>
+    <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M13.5 21v-8.1h2.7l.4-3.2h-3.1V7.6c0-.9.3-1.6 1.6-1.6h1.7V3.1C16.5 3 15.4 3 14.2 3c-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.7V21h3.5Z"/></symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24"><path d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm4 2.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6Zm0 2A2.4 2.4 0 1 0 14.4 12 2.4 2.4 0 0 0 12 9.6ZM17 6.4a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></symbol>
+    <symbol id="icon-youtube" viewBox="0 0 24 24"><path d="M21.6 7.6a2.5 2.5 0 0 0-1.8-1.8C18.1 5.3 12 5.3 12 5.3s-6.1 0-7.8.5A2.5 2.5 0 0 0 2.4 7.6 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.4 2.5 2.5 0 0 0 1.8 1.8c1.7.5 7.8.5 7.8.5s6.1 0 7.8-.5a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.4ZM10 15V9l5.2 3-5.2 3Z"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="M9.5 16.2 5.3 12l-1.4 1.4 5.6 5.6L20.1 8.4l-1.4-1.4-9.2 9.2Z"/></symbol>
+    <symbol id="icon-alert" viewBox="0 0 24 24"><path d="M12 2 1 21h22L12 2Zm0 5.6 6.9 11.9H5.1L12 7.6ZM11 10v4h2v-4h-2Zm0 5.5v2h2v-2h-2Z"/></symbol>
+  </svg>
+
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a href="#topo" class="logo">
+        <span class="logo-title">Navio Homero</span>
+        <span class="logo-sub">Krähenbühl</span>
+      </a>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        id="navToggle"
+        aria-expanded="false"
+        aria-controls="menuPrincipal"
+      >
+        <svg class="icon icon-open" aria-hidden="true"><use href="#icon-menu"></use></svg>
+        <svg class="icon icon-close" aria-hidden="true"><use href="#icon-close"></use></svg>
+        <span>Menu</span>
+      </button>
+
+      <nav class="main-nav" id="menuPrincipal" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#o-navio">O Navio</a></li>
+          <li><a href="#roteiros">Roteiros</a></li>
+          <li><a href="#gastronomia">Gastronomia</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <!-- ===================== INÍCIO ===================== -->
+    <section id="inicio" class="hero" tabindex="-1" aria-labelledby="inicio-titulo">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Barra Bonita · Rio Tietê</p>
+          <h1 id="inicio-titulo">Um cruzeiro tranquilo pelas águas do Tietê</h1>
+          <p class="hero-lead">
+            O Navio Homero Krähenbühl é uma embarcação de médio porte, construída
+            no padrão de barcos europeus e americanos, com porto em Barra Bonita,
+            a 300&nbsp;km da capital paulista. A bordo, passeio, gastronomia e
+            música se encontram em cada viagem pela Hidrovia Tietê-Paraná.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#roteiros">Ver roteiros disponíveis</a>
+            <a class="btn btn-outline" href="#contato">Falar com a equipe</a>
+          </div>
+
+          <dl class="hero-stats" aria-label="Números da embarcação">
+            <div class="stat">
+              <dt>Viagens realizadas</dt>
+              <dd>552</dd>
+            </div>
+            <div class="stat">
+              <dt>Horas navegadas</dt>
+              <dd>2.384</dd>
+            </div>
+            <div class="stat">
+              <dt>Milhas percorridas</dt>
+              <dd>12.898</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 480 420" class="ship-illustration" focusable="false">
+            <ellipse cx="240" cy="330" rx="220" ry="18" class="water-shadow" />
+            <path d="M60 240 C120 220 360 220 420 240 L400 300 C320 320 160 320 80 300 Z" class="hull" />
+            <rect x="120" y="150" width="240" height="90" rx="6" class="cabin" />
+            <rect x="150" y="110" width="180" height="45" rx="4" class="cabin-upper" />
+            <rect x="200" y="70" width="30" height="45" class="funnel" />
+            <line x1="70" y1="330" x2="410" y2="330" class="deck-line" />
+            <g class="portholes">
+              <circle cx="150" cy="195" r="8" />
+              <circle cx="185" cy="195" r="8" />
+              <circle cx="220" cy="195" r="8" />
+              <circle cx="255" cy="195" r="8" />
+              <circle cx="290" cy="195" r="8" />
+              <circle cx="325" cy="195" r="8" />
+            </g>
+            <path d="M20 360 Q 60 345 100 360 T 180 360 T 260 360 T 340 360 T 420 360 T 460 360" class="wave wave-1" />
+            <path d="M0 385 Q 60 368 120 385 T 240 385 T 360 385 T 480 385" class="wave wave-2" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== O NAVIO ===================== -->
+    <section id="o-navio" class="section section-alt" aria-labelledby="navio-titulo">
+      <div class="container">
+        <p class="eyebrow">Conheça a embarcação</p>
+        <h2 id="navio-titulo">O Navio</h2>
+        <p class="section-lead">
+          A planta do Navio Homero se divide entre o casco, onde ficam a praça
+          de máquinas, os tanques e os depósitos, e a superestrutura, formada
+          por três conveses abertos à navegação de passageiros. Cada convés
+          tem uma função própria a bordo.
+        </p>
+
+        <div class="deck-grid">
+          <article class="deck-card">
+            <p class="deck-number">Convés Principal</p>
+            <p class="deck-capacity"><strong>140</strong> lugares</p>
+            <h3>Restaurante, bar e pista de dança</h3>
+            <p>
+              Reúne a cozinha, o Bar Güther, a loja de bordo, o elevador e o
+              restaurante principal, com pista de dança e palco onde fica um
+              piano de cauda fabricado em Chicago em 1932.
+            </p>
+          </article>
+
+          <article class="deck-card">
+            <p class="deck-number">Convés Superior</p>
+            <p class="deck-capacity"><strong>100</strong> lugares no restaurante · <strong>112</strong> no auditório</p>
+            <h3>Restaurante e auditório para eventos</h3>
+            <p>
+              Conta com sanitários masculino, feminino e para pessoas com
+              deficiência, o Bar Babilônia e um restaurante que se transforma
+              em auditório com telão para eventos corporativos.
+            </p>
+          </article>
+
+          <article class="deck-card">
+            <p class="deck-number">Convés Flybridge</p>
+            <p class="deck-capacity">até <strong>50</strong> pessoas</p>
+            <h3>Lounge ao ar livre</h3>
+            <p>
+              O convés mais alto do navio, com o Bar Bambu, sofás e poltronas
+              para apreciar a paisagem do rio a céu aberto.
+            </p>
+          </article>
+        </div>
+
+        <div class="callout callout-accent">
+          <svg class="icon" aria-hidden="true"><use href="#icon-anchor"></use></svg>
+          <div>
+            <h3>Acessibilidade a bordo</h3>
+            <p>
+              O navio conta com elevador entre os conveses e piso tátil
+              direcional, para que todas as pessoas possam se locomover e
+              aproveitar o passeio com autonomia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ROTEIROS ===================== -->
+    <section id="roteiros" class="section" aria-labelledby="roteiros-titulo">
+      <div class="container">
+        <p class="eyebrow">Onde o rio leva você</p>
+        <h2 id="roteiros-titulo">Roteiros</h2>
+        <p class="section-lead">
+          O navio navega por trechos da Hidrovia Tietê-Paraná, partindo do
+          Píer 37, em Barra Bonita. Dois roteiros estão disponíveis conforme o
+          dia da semana, ambos passando pela Eclusa de Barra Bonita — um
+          desnível de 26 metros entre a parte baixa e a parte alta do rio.
+        </p>
+
+        <div class="itinerary-grid">
+          <article class="itinerary-card">
+            <header>
+              <h3>Descobrindo o Rio Tietê</h3>
+              <p class="itinerary-when">Sábados, feriados e datas especiais</p>
+            </header>
+            <p>
+              Passeio de 4 horas navegando a jusante, em direção a Pederneiras,
+              por um trecho do rio com mata ciliar recomposta. No retorno, o
+              navio passa pela Eclusa de Barra Bonita e pela Ponte Levadiça
+              Campos Salles, de 1915.
+            </p>
+            <dl class="itinerary-times">
+              <div>
+                <dt><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-clock"></use></svg>Embarque</dt>
+                <dd>a partir das 11h30</dd>
+              </div>
+              <div>
+                <dt><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-clock"></use></svg>Zarpe</dt>
+                <dd>12h30</dd>
+              </div>
+              <div>
+                <dt><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-clock"></use></svg>Retorno</dt>
+                <dd>16h30</dd>
+              </div>
+            </dl>
+            <a class="btn btn-primary" href="https://naviohomero.com.br/reserve-online" target="_blank" rel="noopener noreferrer">
+              Reservar no site oficial
+              <span class="sr-only"> (abre em nova aba)</span>
+            </a>
+          </article>
+
+          <article class="itinerary-card">
+            <header>
+              <h3>Barra Bonita – São Manuel</h3>
+              <p class="itinerary-when">Domingos</p>
+            </header>
+            <p>
+              Roteiro com destino à Ilha do Serrito e à Ilha de Pedra, em São
+              Manuel, atravessando o Lago de Barra Bonita, entre os municípios
+              de Botucatu, Mineiros do Tietê, Santa Maria da Serra e Dois
+              Córregos.
+            </p>
+            <dl class="itinerary-times">
+              <div>
+                <dt><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-clock"></use></svg>Embarque</dt>
+                <dd>a partir das 09h</dd>
+              </div>
+              <div>
+                <dt><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-clock"></use></svg>Zarpe</dt>
+                <dd>09h30 (pontual)</dd>
+              </div>
+              <div>
+                <dt><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-clock"></use></svg>Retorno</dt>
+                <dd>15h</dd>
+              </div>
+            </dl>
+            <p class="itinerary-note">
+              <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-alert"></use></svg>
+              Caso as condições operacionais não permitam a passagem pela
+              eclusa, o roteiro pode ser alterado.
+            </p>
+            <a class="btn btn-primary" href="https://naviohomero.com.br/reserve-online" target="_blank" rel="noopener noreferrer">
+              Reservar no site oficial
+              <span class="sr-only"> (abre em nova aba)</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GASTRONOMIA ===================== -->
+    <section id="gastronomia" class="section section-alt" aria-labelledby="gastronomia-titulo">
+      <div class="container">
+        <p class="eyebrow">Sabores do interior</p>
+        <h2 id="gastronomia-titulo">Gastronomia</h2>
+        <p class="section-lead">
+          O cardápio segue a cozinha tradicional dos rios paulistas, com peixes
+          de água doce, cachaças e vinhos produzidos no interior do estado.
+          Abra cada item abaixo para ver o que compõe o menu a bordo.
+        </p>
+
+        <div class="menu-accordion">
+          <details class="menu-item" open>
+            <summary>
+              <span>Prato principal</span>
+              <svg class="icon chevron" aria-hidden="true"><use href="#icon-menu"></use></svg>
+            </summary>
+            <div class="menu-item-body">
+              <ul>
+                <li><strong>Pintado na brasa</strong> — na falta, substituído por surubim, cachara, dourada ou filhote; acompanha arroz à grega, pirão e batatas fritas.</li>
+                <li><strong>Moqueca de filhote</strong> — com especiarias, arroz branco e cuscuz tradicional de Piracicaba.</li>
+                <li><strong>Corte argentino</strong> — ao estilo argentino, com arroz biro-biro, batatas fritas e farofa.</li>
+                <li><strong>Nhoque de batata</strong> — com mozzarela e ragu de costela.</li>
+                <li><strong>Ratatouille</strong> — opção vegana.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="menu-item">
+            <summary>
+              <span>Entradas e petiscos</span>
+              <svg class="icon chevron" aria-hidden="true"><use href="#icon-menu"></use></svg>
+            </summary>
+            <div class="menu-item-body">
+              <p>
+                Camarões com palmito em salsa golf, entrada Homero (azeitonas,
+                muçarela, tomate confit e ovos de codorna), coxinhas Homero,
+                iscas de tilápia com molho tártaro e batatas com cheddar e
+                bacon.
+              </p>
+            </div>
+          </details>
+
+          <details class="menu-item">
+            <summary>
+              <span>Bebidas e adega</span>
+              <svg class="icon chevron" aria-hidden="true"><use href="#icon-menu"></use></svg>
+            </summary>
+            <div class="menu-item-body">
+              <p>
+                Carta de vinhos paulistas, cachaças premiadas do interior,
+                cervejas artesanais regionais, chope, e drinques como sangria,
+                clericot, caipirinha e o autoral Blue River.
+              </p>
+            </div>
+          </details>
+
+          <details class="menu-item">
+            <summary>
+              <span>Menu infantil</span>
+              <svg class="icon chevron" aria-hidden="true"><use href="#icon-menu"></use></svg>
+            </summary>
+            <div class="menu-item-body">
+              <p>Carne ou frango, com arroz e batatas fritas.</p>
+            </div>
+          </details>
+        </div>
+
+        <p class="menu-footnote">
+          O valor da passagem já inclui coquetel de boas-vindas (ou café da
+          manhã), uma opção do prato principal, sobremesa, café e licor.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATO ===================== -->
+    <section id="contato" class="section" aria-labelledby="contato-titulo">
+      <div class="container contato-grid">
+        <div class="contato-info">
+          <p class="eyebrow">Fale com a gente</p>
+          <h2 id="contato-titulo">Contato</h2>
+          <p>
+            Tire suas dúvidas sobre roteiros, eventos e reservas. Nossa equipe
+            responde por telefone, e-mail ou pelo formulário ao lado.
+          </p>
+
+          <ul class="contact-list">
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#icon-pin"></use></svg>
+              <span>Píer 37 — Alameda da Orla, 37, Barra Bonita, SP</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg>
+              <a href="tel:+5514998758870">(14) 99875-8870</a>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
+              <a href="mailto:contato@transtiete.com.br">contato@transtiete.com.br</a>
+            </li>
+          </ul>
+
+          <p class="social-label">Redes sociais</p>
+          <ul class="social-list">
+            <li>
+              <a href="https://facebook.com/naviohomero/" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#icon-facebook"></use></svg>
+                <span>Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/naviohomero/" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#icon-instagram"></use></svg>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@naviohomerokrahenbuhl4894" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#icon-youtube"></use></svg>
+                <span>YouTube</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contato-form" id="formContato" novalidate>
+          <h3 class="form-title">Envie uma mensagem</h3>
+
+          <div class="form-field">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" autocomplete="name" aria-describedby="erro-nome" aria-required="true" />
+            <p class="form-error" id="erro-nome" role="alert" hidden></p>
+          </div>
+
+          <div class="form-field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" aria-describedby="erro-email" aria-required="true" />
+            <p class="form-error" id="erro-email" role="alert" hidden></p>
+          </div>
+
+          <div class="form-field">
+            <label for="assunto">Assunto</label>
+            <select id="assunto" name="assunto">
+              <option value="reserva">Reservas</option>
+              <option value="eventos">Eventos corporativos e sociais</option>
+              <option value="acessibilidade">Acessibilidade a bordo</option>
+              <option value="outro">Outro assunto</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" aria-describedby="erro-mensagem ajuda-mensagem" aria-required="true"></textarea>
+            <p class="form-help" id="ajuda-mensagem">Conte com poucas palavras o que você precisa.</p>
+            <p class="form-error" id="erro-mensagem" role="alert" hidden></p>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="btnEnviar">
+            <span class="btn-label">Enviar mensagem</span>
+          </button>
+
+          <p class="form-status" id="statusFormulario" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="logo-title">Navio Homero</p>
+        <p class="footer-tagline">Vivit Usque Somnium</p>
+        <p class="footer-copy">Projeto educacional inspirado no site oficial do Navio Homero Krähenbühl, desenvolvido para o Bootcamp de Desenvolvimento de Sistemas Web Avançados — Front-End.</p>
+      </div>
+
+      <nav aria-label="Links do rodapé">
+        <h2 class="footer-heading">Navegação</h2>
+        <ul class="footer-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#o-navio">O Navio</a></li>
+          <li><a href="#roteiros">Roteiros</a></li>
+          <li><a href="#gastronomia">Gastronomia</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="footer-heading">Site oficial</h2>
+        <p class="footer-copy">
+          Para reservas reais, visite
+          <a href="https://naviohomero.com.br" target="_blank" rel="noopener noreferrer">naviohomero.com.br</a>.
+        </p>
+      </div>
+    </div>
+
+    <p class="footer-bottom">© 2026 Projeto Navio Homero — desenvolvido para fins educacionais.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -29,6 +29,8 @@
     <symbol id="icon-youtube" viewBox="0 0 24 24"><path d="M21.6 7.6a2.5 2.5 0 0 0-1.8-1.8C18.1 5.3 12 5.3 12 5.3s-6.1 0-7.8.5A2.5 2.5 0 0 0 2.4 7.6 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.4 2.5 2.5 0 0 0 1.8 1.8c1.7.5 7.8.5 7.8.5s6.1 0 7.8-.5a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.4ZM10 15V9l5.2 3-5.2 3Z"/></symbol>
     <symbol id="icon-check" viewBox="0 0 24 24"><path d="M9.5 16.2 5.3 12l-1.4 1.4 5.6 5.6L20.1 8.4l-1.4-1.4-9.2 9.2Z"/></symbol>
     <symbol id="icon-alert" viewBox="0 0 24 24"><path d="M12 2 1 21h22L12 2Zm0 5.6 6.9 11.9H5.1L12 7.6ZM11 10v4h2v-4h-2Zm0 5.5v2h2v-2h-2Z"/></symbol>
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3L12 3Zm-1 16H9v-5h6v5h-2Z"/></symbol>
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5H7Z"/></symbol>
   </svg>
 
   <header class="site-header" id="topo">
@@ -51,18 +53,106 @@
       </button>
 
       <nav class="main-nav" id="menuPrincipal" aria-label="Navegação principal">
-        <ul>
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#o-navio">O Navio</a></li>
-          <li><a href="#roteiros">Roteiros</a></li>
-          <li><a href="#gastronomia">Gastronomia</a></li>
-          <li><a href="#contato">Contato</a></li>
+        <ul class="nav-level-1">
+          <li>
+            <a href="#inicio" data-nav-level="1">
+              <svg class="icon icon-nav" aria-hidden="true"><use href="#icon-home"></use></svg>
+              Início
+            </a>
+          </li>
+          <li class="nav-item-has-children">
+            <a href="#o-navio" data-nav-level="1">
+              <svg class="icon icon-nav" aria-hidden="true"><use href="#icon-anchor"></use></svg>
+              O Navio
+            </a>
+            <button
+              type="button"
+              class="submenu-toggle"
+              aria-expanded="false"
+              aria-controls="submenu-o-navio"
+              aria-label="Expandir submenu O Navio"
+            >
+              <svg class="icon icon-chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
+            </button>
+            <ul class="nav-level-2" id="submenu-o-navio" aria-label="Submenu O Navio">
+              <li><a href="#o-navio-conves-principal" data-nav-level="2" data-parent="o-navio">Convés Principal</a></li>
+              <li><a href="#o-navio-conves-superior" data-nav-level="2" data-parent="o-navio">Convés Superior</a></li>
+              <li><a href="#o-navio-conves-flybridge" data-nav-level="2" data-parent="o-navio">Convés Flybridge</a></li>
+              <li><a href="#o-navio-acessibilidade" data-nav-level="2" data-parent="o-navio">Acessibilidade</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-has-children">
+            <a href="#roteiros" data-nav-level="1">
+              <svg class="icon icon-nav" aria-hidden="true"><use href="#icon-clock"></use></svg>
+              Roteiros
+            </a>
+            <button
+              type="button"
+              class="submenu-toggle"
+              aria-expanded="false"
+              aria-controls="submenu-roteiros"
+              aria-label="Expandir submenu Roteiros"
+            >
+              <svg class="icon icon-chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
+            </button>
+            <ul class="nav-level-2" id="submenu-roteiros" aria-label="Submenu Roteiros">
+              <li><a href="#roteiro-descobrindo" data-nav-level="2" data-parent="roteiros">Descobrindo o Rio Tietê</a></li>
+              <li><a href="#roteiro-sao-manuel" data-nav-level="2" data-parent="roteiros">Barra Bonita – São Manuel</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-has-children">
+            <a href="#gastronomia" data-nav-level="1">
+              <svg class="icon icon-nav" aria-hidden="true"><use href="#icon-menu"></use></svg>
+              Gastronomia
+            </a>
+            <button
+              type="button"
+              class="submenu-toggle"
+              aria-expanded="false"
+              aria-controls="submenu-gastronomia"
+              aria-label="Expandir submenu Gastronomia"
+            >
+              <svg class="icon icon-chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
+            </button>
+            <ul class="nav-level-2" id="submenu-gastronomia" aria-label="Submenu Gastronomia">
+              <li><a href="#menu-principal" data-nav-level="2" data-parent="gastronomia">Prato principal</a></li>
+              <li><a href="#menu-entradas" data-nav-level="2" data-parent="gastronomia">Entradas e petiscos</a></li>
+              <li><a href="#menu-bebidas" data-nav-level="2" data-parent="gastronomia">Bebidas e adega</a></li>
+              <li><a href="#menu-infantil" data-nav-level="2" data-parent="gastronomia">Menu infantil</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-has-children">
+            <a href="#contato" data-nav-level="1">
+              <svg class="icon icon-nav" aria-hidden="true"><use href="#icon-mail"></use></svg>
+              Contato
+            </a>
+            <button
+              type="button"
+              class="submenu-toggle"
+              aria-expanded="false"
+              aria-controls="submenu-contato"
+              aria-label="Expandir submenu Contato"
+            >
+              <svg class="icon icon-chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
+            </button>
+            <ul class="nav-level-2" id="submenu-contato" aria-label="Submenu Contato">
+              <li><a href="#contato-info" data-nav-level="2" data-parent="contato">Informações</a></li>
+              <li><a href="#contato-formulario" data-nav-level="2" data-parent="contato">Formulário</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="conteudo-principal">
+
+    <!-- Trilha de navegação: indica o nível atual (máx. 2 níveis de profundidade) -->
+    <nav class="breadcrumb-nav container" aria-label="Você está em">
+      <ol class="breadcrumb" id="breadcrumb">
+        <li><a href="#inicio">Início</a></li>
+      </ol>
+    </nav>
 
     <!-- ===================== INÍCIO ===================== -->
     <section id="inicio" class="hero" tabindex="-1" aria-labelledby="inicio-titulo">
@@ -123,7 +213,7 @@
         </p>
 
         <div class="deck-grid">
-          <article class="deck-card">
+          <article class="deck-card" id="o-navio-conves-principal" tabindex="-1">
             <img class="deck-photo" src="img/conves-principal.jpg" alt="Restaurante e pista de dança do Convés Principal, com o palco e o piano ao fundo" loading="lazy" />
             <div class="deck-card-body">
               <p class="deck-number">Convés Principal</p>
@@ -137,7 +227,7 @@
             </div>
           </article>
 
-          <article class="deck-card">
+          <article class="deck-card" id="o-navio-conves-superior" tabindex="-1">
             <img class="deck-photo" src="img/conves-superior.jpg" alt="Restaurante do Convés Superior, preparado para funcionar como auditório de eventos" loading="lazy" />
             <div class="deck-card-body">
               <p class="deck-number">Convés Superior</p>
@@ -151,7 +241,7 @@
             </div>
           </article>
 
-          <article class="deck-card">
+          <article class="deck-card" id="o-navio-conves-flybridge" tabindex="-1">
             <img class="deck-photo" src="img/conves-flybridge.jpg" alt="Lounge ao ar livre do Convés Flybridge, com sofás e vista para o rio" loading="lazy" />
             <div class="deck-card-body">
               <p class="deck-number">Convés Flybridge</p>
@@ -165,7 +255,7 @@
           </article>
         </div>
 
-        <div class="callout callout-accent">
+        <div class="callout callout-accent" id="o-navio-acessibilidade" tabindex="-1">
           <svg class="icon" aria-hidden="true"><use href="#icon-anchor"></use></svg>
           <div>
             <h3>Acessibilidade a bordo</h3>
@@ -192,7 +282,7 @@
         </p>
 
         <div class="itinerary-grid">
-          <article class="itinerary-card">
+          <article class="itinerary-card" id="roteiro-descobrindo" tabindex="-1">
             <header>
               <h3>Descobrindo o Rio Tietê</h3>
               <p class="itinerary-when">Sábados, feriados e datas especiais</p>
@@ -223,7 +313,7 @@
             </a>
           </article>
 
-          <article class="itinerary-card">
+          <article class="itinerary-card" id="roteiro-sao-manuel" tabindex="-1">
             <header>
               <h3>Barra Bonita – São Manuel</h3>
               <p class="itinerary-when">Domingos</p>
@@ -278,7 +368,7 @@
         </figure>
 
         <div class="menu-accordion">
-          <details class="menu-item" open>
+          <details class="menu-item" id="menu-principal" open tabindex="-1">
             <summary>
               <span>Prato principal</span>
               <svg class="icon chevron" aria-hidden="true"><use href="#icon-menu"></use></svg>
@@ -294,7 +384,7 @@
             </div>
           </details>
 
-          <details class="menu-item">
+          <details class="menu-item" id="menu-entradas" tabindex="-1">
             <summary>
               <span>Entradas e petiscos</span>
               <svg class="icon chevron" aria-hidden="true"><use href="#icon-menu"></use></svg>
@@ -309,7 +399,7 @@
             </div>
           </details>
 
-          <details class="menu-item">
+          <details class="menu-item" id="menu-bebidas" tabindex="-1">
             <summary>
               <span>Bebidas e adega</span>
               <svg class="icon chevron" aria-hidden="true"><use href="#icon-menu"></use></svg>
@@ -323,7 +413,7 @@
             </div>
           </details>
 
-          <details class="menu-item">
+          <details class="menu-item" id="menu-infantil" tabindex="-1">
             <summary>
               <span>Menu infantil</span>
               <svg class="icon chevron" aria-hidden="true"><use href="#icon-menu"></use></svg>
@@ -344,7 +434,7 @@
     <!-- ===================== CONTATO ===================== -->
     <section id="contato" class="section" aria-labelledby="contato-titulo">
       <div class="container contato-grid">
-        <div class="contato-info">
+        <div class="contato-info" id="contato-info" tabindex="-1">
           <p class="eyebrow">Fale com a gente</p>
           <h2 id="contato-titulo">Contato</h2>
           <p>
@@ -390,7 +480,7 @@
           </ul>
         </div>
 
-        <form class="contato-form" id="formContato" novalidate>
+        <form class="contato-form" id="contato-formulario" novalidate tabindex="-1">
           <h3 class="form-title">Envie uma mensagem</h3>
 
           <div class="form-field">
@@ -445,8 +535,21 @@
         <h2 class="footer-heading">Navegação</h2>
         <ul class="footer-links">
           <li><a href="#inicio">Início</a></li>
-          <li><a href="#o-navio">O Navio</a></li>
-          <li><a href="#roteiros">Roteiros</a></li>
+          <li>
+            <a href="#o-navio">O Navio</a>
+            <ul class="footer-sublinks">
+              <li><a href="#o-navio-conves-principal">Convés Principal</a></li>
+              <li><a href="#o-navio-conves-superior">Convés Superior</a></li>
+              <li><a href="#o-navio-conves-flybridge">Flybridge</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#roteiros">Roteiros</a>
+            <ul class="footer-sublinks">
+              <li><a href="#roteiro-descobrindo">Descobrindo o Rio Tietê</a></li>
+              <li><a href="#roteiro-sao-manuel">Barra Bonita – São Manuel</a></li>
+            </ul>
+          </li>
           <li><a href="#gastronomia">Gastronomia</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>

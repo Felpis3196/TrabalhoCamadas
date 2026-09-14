@@ -16,17 +16,37 @@ O objetivo foi desenvolver uma aplicação web de página única (`index.html`)
 com navegação intuitiva, inclusiva e agradável, aplicando princípios de
 acessibilidade, usabilidade e design universal, conforme o guia do bootcamp.
 
-O site tem **5 seções principais**, todas em um único nível de navegação
-(sem submenus):
+O site tem **5 seções principais** (nível 1) com **subseções** (nível 2),
+respeitando o limite de **no máximo dois níveis de profundidade** exigido
+pelo guia do bootcamp:
 
-1. **Início** — apresentação do navio e números da embarcação.
-2. **O Navio** — os três conveses (Principal, Superior e Flybridge) e o
-   destaque de acessibilidade a bordo (elevador e piso tátil direcional).
-3. **Roteiros** — os dois passeios disponíveis (sábados/feriados e
-   domingos), com horários de embarque, zarpe e retorno.
-4. **Gastronomia** — cardápio em formato de acordeão acessível
-   (`<details>`/`<summary>` nativos).
-5. **Contato** — informações de contato e formulário com validação.
+| Nível 1 | Nível 2 (subseções) |
+|---------|---------------------|
+| **Início** | — |
+| **O Navio** | Convés Principal · Convés Superior · Flybridge · Acessibilidade |
+| **Roteiros** | Descobrindo o Rio Tietê · Barra Bonita – São Manuel |
+| **Gastronomia** | Prato principal · Entradas · Bebidas · Menu infantil |
+| **Contato** | Informações · Formulário |
+
+A trilha de navegação (*breadcrumb*) no topo do conteúdo indica em qual
+nível o visitante está. Os links do menu principal trazem **ícone + rótulo
+textual**, conforme o guia.
+
+### Página única ou múltiplas páginas?
+
+O guia do bootcamp exige **no máximo dois níveis de profundidade** na
+navegação — ou seja, a **hierarquia** (ex.: Início → O Navio → Convés
+Principal), e **não** a quantidade de arquivos `.html`.
+
+Este projeto adota **página única** (`index.html`) de propósito:
+
+- **Nível 1:** seções principais no menu (`.nav-level-1`)
+- **Nível 2:** subseções nos submenus (`.nav-level-2`), acessadas por
+  âncoras (`#o-navio-conves-principal`, `#roteiro-descobrindo`, etc.)
+
+Isso cumpre o critério do guia da mesma forma que um site com várias páginas
+(`index.html` → `o-navio.html`), mas evita duplicar cabeçalho, rodapé e
+estilos. **Não é obrigatório** criar um arquivo HTML por seção.
 
 ### Requisitos de acessibilidade e usabilidade atendidos
 
@@ -47,8 +67,9 @@ O site tem **5 seções principais**, todas em um único nível de navegação
 - Formulário de contato com mensagens de erro específicas por campo,
   `aria-describedby`, `aria-invalid` e uma região `aria-live="polite"` que
   anuncia o carregamento e a confirmação do envio.
-- Navegação com no máximo dois níveis de profundidade (menu principal sem
-  submenus).
+- Navegação com **dois níveis de profundidade**: menu principal com
+  submenus acessíveis (teclado, `aria-expanded`, foco visível) e trilha
+  (*breadcrumb*) dinâmica.
 - `prefers-reduced-motion` respeitado (rolagem e transições são desativadas
   para quem configurou essa preferência no sistema).
 - Sem rolagem lateral e sem menus escondidos por gestos não óbvios.
@@ -148,12 +169,33 @@ Conforme sugerido no guia do bootcamp:
 - [ ] Nome do integrante 2
 - [ ] Nome do integrante 3
 
-## 8. Próximos passos sugeridos
+## 8. Como demonstrar a navegação em camadas (segunda entrega)
+
+Use estes passos na apresentação para mostrar os **dois níveis de
+profundidade** ao professor:
+
+1. **Submenu no menu principal** — passe o mouse sobre *O Navio* ou
+   *Roteiros* (desktop) ou use `Tab` + botão de expandir (mobile).
+2. **Breadcrumb dinâmico** — clique em *Convés Principal* e observe a trilha
+   no topo: `Início › O Navio › Convés Principal`.
+3. **URL com hash** — após clicar em uma subseção, a barra de endereço
+   mostra, por exemplo, `#roteiro-descobrindo` (prova do segundo nível).
+4. **Navegação por teclado** — percorra o menu com `Tab`, abra o submenu
+   com `Enter`, feche o menu mobile com `Esc`.
+5. **Limite respeitado** — não há terceiro nível (ex.: Convés → Piano →
+   Detalhe técnico); a hierarquia para no nível 2.
+
+Frase sugerida para a apresentação:
+
+> “O site é de página única, mas a navegação tem dois níveis hierárquicos:
+> seções principais no menu e subseções nos submenus, com breadcrumb
+> indicando a profundidade atual — conforme o guia.”
+
+## 9. Próximos passos sugeridos
 
 - Adicionar as 5 fotos oficiais listadas na seção 4.
 - Rodar o Lighthouse e o axe DevTools e corrigir eventuais apontamentos.
 - Revalidar o contraste de cores com o WebAIM Contrast Checker.
 - Substituir o envio simulado do formulário por uma integração real
   (e-mail, planilha ou backend), se o escopo da entrega exigir.
-- Preparar a apresentação do projeto (características de UI e UX) para a
-  segunda entrega.
+- Usar a seção 8 como roteiro na apresentação da segunda entrega.
